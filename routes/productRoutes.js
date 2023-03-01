@@ -6,7 +6,7 @@ const Product = require("../models/Product");
 
 //Home routes
 router.get('/', (req, res)=>{
-  res.send("you are on Home page Server is running")
+  res.redirect('/products');
 });
 
 router.get("/products", async (req, res) => {
