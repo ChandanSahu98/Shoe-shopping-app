@@ -20,7 +20,7 @@ const productRoutes = require("./routes/productRoutes");
 const reviewRoutes = require('./routes/reviewRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 
-const dburl = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
+const dburl = process.env.DB_URL || "mongodb://127.0.0.1:27017/shopping-app-DB"
 
 mongoose
   .connect(dburl)
@@ -40,10 +40,10 @@ const store = MongoStore.create({
   touchAfter : 60 * 60 * 24 * 1
 })
 
-const secret = process.env.SECRET || 'weeneedasecret'
+const envsecret = process.env.SECRET || 'weeneedasecret'
 const sessionConfig = {
   store,
-  secret: secret,
+  secret: envsecret,
   resave: false,
   saveUninitialized: true,
   cookie : {

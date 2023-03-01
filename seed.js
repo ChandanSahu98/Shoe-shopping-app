@@ -4,7 +4,7 @@ if(process.env.NODE_ENV !== 'production'){
 const mongoose = require("mongoose");
 const Product = require("./models/Product");
 
-const dbURL = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
+const dbURL = process.env.DB_URL || "mongodb://127.0.0.1:27017/shopping-app-DB"
 
 mongoose
   .connect(dbURL)
