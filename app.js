@@ -20,7 +20,7 @@ const productRoutes = require("./routes/productRoutes");
 const reviewRoutes = require('./routes/reviewRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 
-const dburkl = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
+const dburl = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
 
 mongoose
   .connect(dburl)
