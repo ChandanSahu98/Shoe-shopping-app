@@ -20,10 +20,10 @@ const productRoutes = require("./routes/productRoutes");
 const reviewRoutes = require('./routes/reviewRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 
-const dbURL = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
+const dburkl = process.env.dbURL || "mongodb://127.0.0.1:27017/shopping-app-DB"
 
 mongoose
-  .connect(dbURL)
+  .connect(dburl)
   .then(() => console.log("Connected with MongoDB"))
   .catch((err) => console.log(err));
 
@@ -36,7 +36,7 @@ app.use(methodOverride('_method'))
 
 
 const store = MongoStore.create({
-  mongoUrl : dbURL,
+  mongoUrl : dburl,
   touchAfter : 60 * 60 * 24 * 1
 })
 
